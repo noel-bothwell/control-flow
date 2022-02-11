@@ -32,24 +32,14 @@ fun minimumOf(number1: Long, number2: Long){
 }
 
 fun rangeOf(number: Int){
-    if (number <= 0) {
-        println("$number falls into the range 0 or below")
-    }
 
-    if (number in 1..5){
-        println("$number falls into the range 1 to 5")
-    }
+    when(number) {
+        in Int.MIN_VALUE .. 0  -> println("$number falls into the range 0 or below")
+         in 1..5 -> println("$number falls into the range 1 to 5")
+        in 6..10 -> println("$number falls into the range 6 to 10")
+        in 11..20 -> println("$number falls into the range 11 to 20")
+        in Int.MAX_VALUE .. 21  -> println("$number falls into the range 21 or above")
 
-    if (number in 6..10) {
-        println("$number falls into the range 6 to 10")
-    }
-
-    if (number in 11..20) {
-        println("$number falls into the range of 11 to 20")
-    }
-
-    if (number >= 21) {
-        println("$number is either greater or equal to 21")
     }
 
     //TODO This function takes in a number and prints out the range that the number falls in.
@@ -58,6 +48,16 @@ fun rangeOf(number: Int){
 }
 
 fun inferredTypeOf(variable: Any){
+
+    when(variable) {
+        is Int -> println("$variable is an Int")
+        is Long -> println("$variable is a Long")
+        is Double -> println("$variable is a Double")
+        is Float -> println("$variable is a Float")
+        is Boolean -> println("$variable is a Boolean")
+        else -> println("I am something else")
+    }
+
     //TODO This function examines the inferred type of the variable passed as a parameter.
     // When the type is Int, print out that the data type of the variable is Int.
     //    Adopt the same approach for the following types: Long, Double, Float or Boolean.
