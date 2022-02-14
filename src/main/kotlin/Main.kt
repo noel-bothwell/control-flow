@@ -64,7 +64,13 @@ fun inferredTypeOf(variable: Any){
     // When the data type is not Int, Long, Double, Float or Boolean, print that the data type is something else.
 }
 
-fun stringContains(str : String){
+fun stringContains(str : String) = when(str) {
+
+        "A" -> println("$str contains the letter A")
+        "B" -> println("$str contains the letter  B")
+        "C" -> println("$str contains the letter C")
+         else -> println("$str doesnt contain the letters A, B or C")
+
     //TODO If the string, passed as a parameter:
     //    - contains the letter A, print the string and say it contains A.
     //    - contains the letter B, print the string and say it contains B.
